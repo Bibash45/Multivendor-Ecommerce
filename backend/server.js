@@ -4,7 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const { dbConnect } = require("./utils/db");
+const {dbConnect} = require("./utils/db")
 
 // middleware
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+console.log(process.env.PORT)
 // router
 app.use("/api", require("./routes/authRoutes"));
 
