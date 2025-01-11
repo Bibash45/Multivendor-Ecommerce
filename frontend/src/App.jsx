@@ -10,7 +10,6 @@ const App = () => {
     const routes = getRoutes();
     setAllRoutes((prevRoutes) => [...prevRoutes, routes]);
   }, []);
-  console.log(allRoutes);
 
   return <Router allRoutes={allRoutes} />;
 };
