@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { getNav } from "../navigation";
 import { CgLogOut } from "react-icons/cg";
 
-const Sidebar = () => {
+const Sidebar = ({ showSidebar, setShowSidebar }) => {
   const { pathname } = useLocation();
 
   const [allNav, setAllNav] = useState([]);
@@ -14,10 +14,17 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div></div>
+      <div
+        onClick={() => setShowSidebar(false)}
+        className={`flex duration-200 ${
+          !showSidebar ? "invisible" : "visible"
+        } w-screen h-screen bg-[#22f80] top-0 left-0 z-10`}
+      ></div>
 
       <div
-        className={`w-[260px] fixed bg-[#e6e7fb] z-50 top-0 h-screen shadow-[0_0_15px_0_rgb(34_41_47_/_5%)] transition-all`}
+        className={`w-[260px] fixed bg-[#e6e7fb] z-50 top-0 h-screen shadow-[0_0_15px_0_rgb(34_41_47_/_5%)] transition-all ${
+          showSidebar ? "left-0" : "-left-[260px] lg:left-0"
+        }`}
       >
         {/* logo */}
         <div className="h-[70px] flex justify-center items-center ">
@@ -52,7 +59,9 @@ const Sidebar = () => {
             })}
             <li>
               <button className="text-[#030811] font-bold duration-200  px-[12px] py-[9px] rounded-sm flex justify-start items-center gap-[12px] hover:pl-4 transition-all w-full mb-1 ">
-                <span><CgLogOut size={20}  /></span>
+                <span>
+                  <CgLogOut size={20} />
+                </span>
                 <span>Logout</span>
               </button>
             </li>

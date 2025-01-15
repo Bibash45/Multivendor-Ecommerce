@@ -16,7 +16,6 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(cookieParser());
-console.log(process.env.PORT)
 // router
 app.use("/api", require("./routes/authRoutes"));
 
