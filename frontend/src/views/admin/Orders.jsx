@@ -1,0 +1,114 @@
+import React, { useState } from "react";
+import { PiBoxArrowDown } from "react-icons/pi";
+import { Link } from "react-router-dom";
+
+const Orders = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchValue, setSearchValue] = useState();
+  const [perPage, setPerpage] = useState(5);
+  console.log(perPage);
+  const [show, setShow] = useState(false);
+
+  return (
+    <div className="px-2 lg:px-7 pt-5 ">
+      <div className="w-full p-4 bg-[#6a5fdf] rounded-md">
+        <div className="flex justify-between items-center">
+          <select
+            onChange={(e) => setPerpage(e.target.value)}
+            className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-white"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+          <input
+            className="bg-[#6a5fdf] px-4 py-2 focus:border-indigo-500 outline-none  rounded-md border border-slate-700 text-white"
+            type="text"
+            placeholder="search"
+          />
+        </div>
+
+        <div className="relative mt-5 overflow-x-auto">
+          <div className="w-full text-sm text-left bg-[#6a5fdf]">
+            <div className="text-sm text-[#d0d2d6]  uppercase border-b border-slate-700">
+              <div className="flex justify-between items-center">
+                <div className="py-3 w-[25%] font-bold">Order id</div>
+                <div className="py-3 w-[13%] font-bold">Price</div>
+                <div className="py-3 w-[18%] font-bold">Payment Status</div>
+                <div className="py-3 w-[18%] font-bold">Order Status</div>
+                <div className="py-3 w-[18%] font-bold">Action</div>
+                <div className="py-3 w-[8%] font-bold">
+                  <PiBoxArrowDown size={20} />
+                </div>
+              </div>
+            </div>
+
+            <div className=" text-[#d0d2d6] ">
+              <div className="flex justify-between items-start border-b border-slate-700">
+                <div className="py-3 w-[25%] font-medium whitespace-nowrap">
+                  #2423
+                </div>
+                <div className="py-3 w-[13%] font-medium whitespace-nowrap">
+                  $200
+                </div>
+                <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                  Pending
+                </div>
+                <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                  Pending
+                </div>
+                <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                  <Link>View</Link>
+                </div>
+                <div
+                  onClick={() => setShow(!show)}
+                  className="py-3 w-[8%] font-medium whitespace-nowrap cursor-pointer hover:text-amber-600"
+                >
+                  <PiBoxArrowDown size={18} />
+                </div>
+              </div>
+              <div
+                className={
+                  show
+                    ? "block border-b border-amber-700 bg-amber-600"
+                    : "hidden"
+                }
+              >
+                <div className="flex justify-start items-start border-b border-slate-700">
+                  <div className="py-3 w-[25%] font-medium whitespace-nowrap pl-3">
+                    #6546
+                  </div>
+                  <div className="py-3 w-[13%] font-medium whitespace-nowrap">
+                    $56
+                  </div>
+                  <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                    Pending
+                  </div>
+                  <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                    Pending
+                  </div>
+                </div>
+                <div className="flex justify-start items-start border-b border-slate-700">
+                  <div className="py-3 w-[25%] font-medium whitespace-nowrap pl-3">
+                    #6546
+                  </div>
+                  <div className="py-3 w-[13%] font-medium whitespace-nowrap">
+                    $56
+                  </div>
+                  <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                    Pending
+                  </div>
+                  <div className="py-3 w-[18%] font-medium whitespace-nowrap">
+                    Pending
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Orders;
