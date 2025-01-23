@@ -96,7 +96,7 @@ const Sellers = () => {
                       <td className="py-1 px-4 font-medium whitespace-nowrap">
                         Udayapur
                       </td>
-                      <td className="py-1 px-4 font-medium whitespace-nowrap">
+                      <td className="py-1 px-4 font-medium ewhitespace-nowrap">
                         <div className="flex justify-start items-center gap-4">
                           <Link className="p-[6px]  bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50 text-white">
                           <FaEye />
