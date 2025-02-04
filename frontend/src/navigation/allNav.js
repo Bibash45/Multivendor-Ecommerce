@@ -1,10 +1,12 @@
 import { AiOutlineDashboard, AiOutlineShoppingCart } from "react-icons/ai";
-import { BiCategory } from "react-icons/bi";
-import { FaUsers, FaUserTimes } from "react-icons/fa";
-import { FaCodePullRequest } from "react-icons/fa6";
-import { MdPayment } from "react-icons/md";
+import { BiCategory, BiChat } from "react-icons/bi";
+import { FaPaypal, FaUsers, FaUserTimes } from "react-icons/fa";
+import { FaCodePullRequest, FaJediOrder } from "react-icons/fa6";
+import { MdPayment, MdPeople } from "react-icons/md";
 import { IoIosChatbubbles } from "react-icons/io";
+import { TbShoppingCartDiscount } from "react-icons/tb";
 
+import { AiOutlineProduct } from "react-icons/ai";
 export const allNav = [
   {
     id: 1,
@@ -72,50 +74,57 @@ export const allNav = [
   {
     id: 10,
     title: "Add Product",
-    icon: <AiOutlineDashboard />,
+    icon: <AiOutlineProduct />,
     role: "seller",
     path: "/seller/dashboard/add-product",
   },
   {
     id: 11,
     title: "All Product",
-    icon: <AiOutlineDashboard />,
+    icon: <AiOutlineProduct />,
     role: "seller",
     path: "/seller/dashboard/all-product",
   },
   {
     id: 12,
     title: "Discount Product",
-    icon: <AiOutlineDashboard />,
+    icon: <TbShoppingCartDiscount />,
     role: "seller",
     path: "/seller/dashboard/discount-product",
   },
   {
     id: 13,
     title: "Orders",
-    icon: <AiOutlineDashboard />,
+    icon: <AiOutlineShoppingCart />,
     role: "seller",
     path: "/seller/dashboard/orders",
   },
   {
     id: 14,
     title: "Payments",
-    icon: <AiOutlineDashboard />,
+    icon: <MdPayment />,
     role: "seller",
     path: "/seller/dashboard/payments",
   },
   {
     id: 15,
     title: "Chat-Customer",
-    icon: <AiOutlineDashboard />,
+    icon: <BiChat />,
     role: "seller",
     path: "/seller/dashboard/chat-customer",
   },
   {
     id: 16,
     title: "Chat-Support",
-    icon: <AiOutlineDashboard />,
+    icon: <BiChat />,
     role: "seller",
     path: "/seller/dashboard/chat-support",
+  },
+  {
+    id: 17,
+    title: "Profile",
+    icon: <MdPeople />,
+    role: "seller",
+    path: "/seller/dashboard/profile",
   },
 ];

@@ -285,7 +285,7 @@ const AddProduct = () => {
                 className="bg-red-500  hover:shadow-red-500/40 hover:shadow-md text-white rounded-md px-7 py-2 my-2"
                 type="submit"
               >
-                Add Category
+                Add Product
               </button>
             </div>
           </form>
