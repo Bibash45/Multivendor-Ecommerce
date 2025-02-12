@@ -1,10 +1,11 @@
 import { AiOutlineDashboard, AiOutlineShoppingCart } from "react-icons/ai";
 import { BiCategory, BiChat } from "react-icons/bi";
-import { FaPaypal, FaUsers, FaUserTimes } from "react-icons/fa";
+import { FaPaypal, FaPlus, FaUsers, FaUserTimes } from "react-icons/fa";
 import { FaCodePullRequest, FaJediOrder } from "react-icons/fa6";
 import { MdPayment, MdPeople } from "react-icons/md";
 import { IoIosChatbubbles } from "react-icons/io";
 import { TbShoppingCartDiscount } from "react-icons/tb";
+import { BsListStars } from "react-icons/bs";
 
 import { AiOutlineProduct } from "react-icons/ai";
 export const allNav = [
@@ -74,14 +75,14 @@ export const allNav = [
   {
     id: 10,
     title: "Add Product",
-    icon: <AiOutlineProduct />,
+    icon: <FaPlus />,
     role: "seller",
     path: "/seller/dashboard/add-product",
   },
   {
     id: 11,
     title: "All Product",
-    icon: <AiOutlineProduct />,
+    icon: <BsListStars />,
     role: "seller",
     path: "/seller/dashboard/all-product",
   },

@@ -109,6 +109,7 @@ class authControllers {
       });
     }
   };
+  // end seller_login method
 
   getUser = async (req, res) => {
     const { id, role } = req;
@@ -119,10 +120,17 @@ class authControllers {
           userInfo: user,
         });
       } else {
-        console.log("Seller Info");
+        const seller = await sellerModel.findById(id);
+
+        responseReturn(res, 200, {
+          userInfo: seller,
+        });
       }
     } catch (error) {
       console.log(error.message);
+      responseReturn(res, 500, {
+        error: "Internal Server Error",
+      });
     }
   };
   // end getUser Method
